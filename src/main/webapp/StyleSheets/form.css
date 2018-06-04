@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+main fieldset {
+	border: 5px solid #70cddb;
+	padding: 10px;
+	margin: 0 auto;
+	width: 100%;
+	box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 1);
+	-moz-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 1);
+	-webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 1);
+}
+
+main fieldset legend {
+	padding: 5px 10px;
+	border: 5px solid #70cddb;
+	background-color: rgba(100, 100, 100, 0.5);
+	text-align: right;
+}
+
+main input, main textarea, main select {
+	width: 100%;
+	margin: 10px 0;
+	border: 1px solid black;
+	padding: 15px;
+	box-shadow: inset 4px 3px 10px 0px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow: inset 4px 3px 10px 0px rgba(50, 50, 50, 0.5);
+	-webkit-box-shadow: inset 4px 3px 10px 0px rgba(50, 50, 50, 0.5);
+}
+
+main textarea {
+	min-height: 150px;
+	resize: vertical;
+	overflow: auto; /* Remove the scrollbar IE puts on all textareas */
+}
+
+main input[type=submit], main input[type=reset] {
+	margin: 5px 0 0;
+	box-shadow: none;
+	box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 1);
+	-moz-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 1);
+	-webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 1);
+}
+
+main input[type=submit]:hover, main input[type=reset]:hover {
+	background: #00c7e6;
+	color: #ddd;
+}
+
+main .message {
+	font-size: 0.8em;
+}
+
+main .error {
+	margin: 0 10px;
+	color: #e00000;
+	font-size: 0.8em;
+}
+
+main input.error, main textarea.error, main select.error {
+	margin: 10px 0;
+}
+
+main input.error[type=date] {
+	font-size: 1em;
+}
+
+@media ( min-width : 700px) {
+	main input[type=submit], main input[type=reset] {
+		margin: 5px 0 0;
+		box-shadow: none;
+		box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 1);
+		-moz-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 1);
+		-webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 1);
+	}
+	main fieldset {
+		width: 70%;
+	}
+	main input[type=submit], main input[type=reset] {
+		width: 49%;
+		float: left;
+	}
+	main input[type=reset] {
+		float: right;
+	}
+}
