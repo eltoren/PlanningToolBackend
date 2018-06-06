@@ -35,7 +35,6 @@ public class AdminAddProjectController {
 	@RequestMapping(method = RequestMethod.POST)
 	public Projects addNewProject(@RequestBody Projects projects) {
 		Projects saveProject = handleProject(projects);
-		System.out.println(saveProject);
 		projectsService.saveProject(saveProject);
 		System.out.println("project saved");
 		return projects;
@@ -51,7 +50,6 @@ public class AdminAddProjectController {
 		if (!projects.getUsersOnProject().isEmpty()) {
 			List<Users> list = new ArrayList<>();
 			for (Users user : projects.getUsersOnProject()) {
-				System.out.println(user);
 				list.add(usersService.findUserById(user.getId()));
 			}
 			projects.setUsersOnProject(list);

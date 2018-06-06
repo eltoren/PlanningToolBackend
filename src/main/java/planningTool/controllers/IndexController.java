@@ -43,7 +43,7 @@ public class IndexController {
 
 		Customers customer = new Customers();
 		customer.setCustomerName("abano");
-		customer.addProject(project);
+		customer.addProjectsOfCustomer(project);
 		
 		user.addProject(project);
 		project.setOwnerOfProject(customer);

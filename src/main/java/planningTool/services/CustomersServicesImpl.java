@@ -71,7 +71,7 @@ public class CustomersServicesImpl implements CustomersServices {
 
 	@Override
 	public List<Projects> getAllProjectsOfCustomer(Customers customer) {
-		return customer.getProjects();
+		return customer.getProjectsOfCustomer();
 	}
 
 	@Override

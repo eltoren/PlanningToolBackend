@@ -44,32 +44,36 @@ public class Customers {
 		this.customerName = customerName;
 	}
 
-	public List<Projects> getProjects() {
+	public List<Projects> getProjectsOfCustomer() {
 		return projectsOfCustomer;
 	}
 
-	public void setProjects(List<Projects> projects) {
+	public void setProjectsOfCustomer(List<Projects> projects) {
 		this.projectsOfCustomer = projects;
 	}
 
-	public void addProject(Projects project) {
+	public void addProjectsOfCustomer(Projects project) {
 		projectsOfCustomer.add(project);
 	}
 
-	public void removeProject(Projects project) {
+	public void removeProjectsOfCustomer(Projects project) {
 		projectsOfCustomer.remove(project);
 	}
 
-	public void addProjectsList(List<Projects> projects) {
+	public void addProjectsOfCustomerList(List<Projects> projects) {
 		for (Projects project : projects) {
 			projectsOfCustomer.add(project);
 		}
 	}
 
-	public void removeProjectList(List<Projects> projects) {
+	public void removeProjectsOfCustomerList(List<Projects> projects) {
 		for (Projects project : projects) {
 			projectsOfCustomer.remove(project);
 		}
+	}
+	
+	public void emptyProjectsOfCustomer() {
+		this.projectsOfCustomer.clear();
 	}
 
 	@Override
@@ -82,5 +86,7 @@ public class Customers {
 		}
 		return "Customers [id= " + id + ", customerName= " + customerName + ", projectsOfCustomer= " + projectsDesc + "]";
 	}
+	
+	
 
 }
