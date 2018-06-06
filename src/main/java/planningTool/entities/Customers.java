@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope=Customers.class)
 public class Customers {
 
 	@Id
@@ -80,7 +80,7 @@ public class Customers {
 				projectsDesc = projectsDesc + project.getProjectName() + ", ";
 			}
 		}
-		return "Customers [id=" + id + ", customerName=" + customerName + ", projects=" + projectsDesc + "]";
+		return "Customers [id= " + id + ", customerName= " + customerName + ", projectsOfCustomer= " + projectsDesc + "]";
 	}
 
 }

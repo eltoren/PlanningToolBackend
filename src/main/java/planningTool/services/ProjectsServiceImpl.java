@@ -1,5 +1,6 @@
 package planningTool.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,7 +69,7 @@ public class ProjectsServiceImpl implements ProjectsServices {
 
 	@Override
 	public List<Projects> getAllProjects() {
-		return (List<Projects>) repo.findAll();
+		return (ArrayList<Projects>) repo.findAll();
 	}
 
 	@Override

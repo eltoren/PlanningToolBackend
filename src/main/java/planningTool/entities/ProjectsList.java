@@ -19,4 +19,15 @@ public class ProjectsList {
 		this.allProjects = (List<Projects>) allProjects;
 	}
 
+	@Override
+	public String toString() {
+		String projects = "";
+		for (Projects project : allProjects) {
+			projects = projects + project + ",\n";
+		}
+		return "ProjectsList [allProjects=\n" + projects + "]";
+	}
+	
+	
+
 }

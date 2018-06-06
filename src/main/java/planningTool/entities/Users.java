@@ -3,6 +3,7 @@ package planningTool.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope=Users.class)
 public class Users {
 
 	@Id
@@ -37,7 +38,7 @@ public class Users {
 	@Column
 	private String functions;
 
-	@ManyToMany(mappedBy = "usersOnProject")
+	@ManyToMany(mappedBy = "usersOnProject", cascade=CascadeType.ALL)
 	private List<Projects> projectsOfUser = new ArrayList<>();
 
 	public long getId() {
@@ -122,6 +123,10 @@ public class Users {
 		for (Projects project : projects) {
 			this.projectsOfUser.remove(project);
 		}
+	}
+	
+	public void emptyProjectList() {
+		this.projectsOfUser.clear();
 	}
 
 	@Override
