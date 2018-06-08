@@ -30,16 +30,18 @@ public class ProjectsListController {
 		projectsList.setAllProjects(projectService.getAllProjects());
 		System.out.println("getting projects");
 		System.out.println(projectsList);
+		projectsList = handleProjectList(projectsList);
 		return projectsList;
-
 	}
 
-//	@ResponseBody
-//	@RequestMapping(path = "/Users", method = RequestMethod.POST)
-//	@CrossOrigin(origins = "http://localhost:4200")
-//	public ProjectsList getAllProjectsOfUser(@RequestBody Users user) {
-//		ProjectsList projectsList = new ProjectsList();
-//		projectsList.setAllProjects(usersService.getAllProjectsOfUser(user));
-//		return projectsList;
-//	}
+	private ProjectsList handleProjectList(ProjectsList projectsList) {
+		for (int i = 0; i < projectsList.getAllProjects().size(); i++) {
+			projectsList.getAllProjects().get(i).getOwnerOfProject().getProjectsOfCustomer().clear();
+			for (int j = 0; j < projectsList.getAllProjects().get(i).getUsersOnProject().size(); j++) {
+				projectsList.getAllProjects().get(i).getUsersOnProject().get(j).getProjectsOfUser().clear();
+			}
+		}
+		return projectsList;
+	}
+
 }

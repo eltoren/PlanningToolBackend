@@ -26,8 +26,16 @@ public class UsersListController {
 		usersList.setAllUsers(usersService.getAllUsers());
 		System.out.println("getting projects");
 		System.out.println(usersList);
-
+		usersList = handleUsersList(usersList);
 		return usersList;
+	}
 
+	private UsersList handleUsersList(UsersList usersList) {
+		for (int i = 0; i < usersList.getAllUsers().size(); i++) {
+			for (int j = 0; j < usersList.getAllUsers().get(i).getProjectsOfUser().size(); j++) {
+				usersList.getAllUsers().get(i).getProjectsOfUser().get(j).getUsersOnProject().clear();
+			}
+		}
+		return usersList;
 	}
 }

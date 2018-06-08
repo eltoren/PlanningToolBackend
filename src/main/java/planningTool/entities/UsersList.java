@@ -20,6 +20,17 @@ public class UsersList {
 		this.allUsers = list;
 	}
 
+	@Override
+	public String toString() {
+		String users = "";
+		for (Users user : allUsers) {
+			users = users + user + ",\n";
+		}
+		return "UsersList [allUsers=" + users + "]";
+	}
+	
+	
+
 	
 
 }
